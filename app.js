@@ -23,9 +23,8 @@ const schedule = require("node-schedule");
 const sendWhatsAppMessage= require("./message");
 const MongoStore = require('connect-mongo');
 
-console.log(process.env.MONGO_URI);
 
-mongoose.connect("mongodb+srv://shashankkoti05:FBHVcW4DNm0hhKsx@shareride.hkyk9ed.mongodb.net/?retryWrites=true&w=majority&appName=shareRide").then(() => {
+mongoose.connect(process.env.MONGO_URI).then(() => {
     console.log("✅ MongoDB connected successfully");
 })
 .catch((err) => {
@@ -40,8 +39,19 @@ app.use(express.static(path.join(__dirname,"/public")));
 app.engine('ejs', ejsMate);
 app.use(express.json());
 
+const store = MongoStore.create({
+    mongoUrl: process.env.MONGO_URI,
+    crypto:{
+        secret: process.env.SECRET,
+    },
+    touchAfter: 24*60*60,
+})
+store.on("error",(err)=>{
+    console.log("Error in mongo session store",err)
+})
 
 const sessionOptions = {
+    store,
     secret: 'MYSECRET',
     resave: false,
     saveUninitialized: true,
