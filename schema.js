@@ -5,7 +5,7 @@ module.exports.ridePostSchema = Joi.object({
         pickUp: Joi.string().required(),
         drop: Joi.string().required(),
         date: Joi.date().iso().required(),  // Ensures valid date format (YYYY-MM-DD)
-        price: Joi.number().required().min(0),  // Price must be a positive number
+        price: Joi.number().required().min(0).max(11),  // Price must be a positive number
         seats: Joi.number().integer().required().min(1), // Seats must be a number (min 1)
         aadhaar: Joi.string()
         .pattern(/^\d{12}$/, 'Aadhaar')  // Ensures it's exactly 12 digits

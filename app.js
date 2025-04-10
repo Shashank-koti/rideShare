@@ -147,7 +147,7 @@ app.get("/logout",(req,res,next)=>{
 });
 
 app.get("/ridePost",isLoggedIn,(req,res)=>{
-    res.render("ridePost.ejs");
+    res.render("ridepost.ejs");
 });
 
 app.post("/ridepost",validateRidePost, wrapAsync(async(req,res)=>{

@@ -1,16 +1,23 @@
- <% if (success.length > 0) { %>
-    <div id="flash-message" class="alert alert-success alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3 shadow-lg" role="alert">
+<% if (success.length > 0) { %>
+    <div id="flash-message" 
+         class="alert alert-success alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3 mt-sm-4 mt-md-5 px-3 px-sm-4 px-md-5 py-2 shadow-lg"
+         role="alert"
+         style="z-index: 1050; max-width: 90%; width: auto; font-size: 0.95rem;">
         <%= success %>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <% } %>
 
 <% if (error.length > 0) { %>
-    <div id="flash-message" class="alert alert-danger alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3 shadow-lg" role="alert">
+    <div id="flash-message" 
+         class="alert alert-danger alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3 mt-sm-4 mt-md-5 px-3 px-sm-4 px-md-5 py-2 shadow-lg"
+         role="alert"
+         style="z-index: 1050; max-width: 90%; width: auto; font-size: 0.95rem;">
         <%= error %>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <% } %>
+
 
 <!-- Auto-hide Flash Messages After 3 Seconds -->
 <script>
