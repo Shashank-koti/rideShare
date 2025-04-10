@@ -1,10 +1,16 @@
+if(process.env.NODE_ENV != "production"){
+    require('dotenv').config()
+}
+
 const mongoose = require("mongoose");
 const RideListing = require("../models/ridePost");
 const sampleRides = require("./data");
 
-
-mongoose.connect("mongodb+srv://shashankkoti05:shashankkoti05@cluster0.lsdotqw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
-    console.log("Connected to MongoDB");
+mongoose.connect("mongodb+srv://shashankkoti05:FBHVcW4DNm0hhKsx@shareride.hkyk9ed.mongodb.net/?retryWrites=true&w=majority&appName=shareRide").then(() => {
+    console.log("✅ MongoDB connected successfully");
+})
+.catch((err) => {
+    console.error("❌ MongoDB connection failed:", err.message);
 });
 
 
@@ -15,7 +21,7 @@ const initDB = async () => {
         // Create a new array with `owner` field added
         const ridesWithOwner = sampleRides.map((obj) => ({
             ...obj,
-            owner:'67daff1bd03fd89610d01132',}));
+            owner:'67f802fb848dc24d436709c7',}));
 
         await RideListing.insertMany(ridesWithOwner); // Insert new ride data
         console.log("🚗 Ride data initialized successfully!");
