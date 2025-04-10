@@ -21,9 +21,15 @@ const {isLoggedIn} = require("./midddleware");
 const {ridePostSchema } = require("./schema");
 const schedule = require("node-schedule");
 const sendWhatsAppMessage= require("./message");
+const MongoStore = require('connect-mongo');
 
-mongoose.connect("mongodb://localhost:27017/rideShare").then(()=>{
-    console.log("Connected to MongoDB");
+console.log(process.env.MONGO_URI);
+
+mongoose.connect("mongodb+srv://shashankkoti05:FBHVcW4DNm0hhKsx@shareride.hkyk9ed.mongodb.net/?retryWrites=true&w=majority&appName=shareRide").then(() => {
+    console.log("✅ MongoDB connected successfully");
+})
+.catch((err) => {
+    console.error("❌ MongoDB connection failed:", err.message);
 });
 
 app.set("view engine", "ejs");

@@ -3,7 +3,7 @@ const RideListing = require("../models/ridePost");
 const sampleRides = require("./data");
 
 
-mongoose.connect("mongodb://localhost:27017/rideShare").then(()=>{
+mongoose.connect("mongodb+srv://shashankkoti05:shashankkoti05@cluster0.lsdotqw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
     console.log("Connected to MongoDB");
 });
 
