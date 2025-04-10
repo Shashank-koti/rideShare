@@ -1,0 +1,90 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container-fluid px-4">
+      <!-- Brand -->
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="/rideShare">
+        <img src="https://img.icons8.com/3d-fluency/50/car.png"
+             alt="Ride Share Logo" 
+             class="rounded-circle shadow-sm bg-white p-1" 
+             style="width: 40px; height: 40px; object-fit: cover;">
+        <span class="text-white">Ride Share</span>
+      </a>
+      
+
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Collapsible Content -->
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto d-flex align-items-center gap-lg-3">
+  
+          <!-- Ride Links -->
+          <li class="nav-item">
+            <a class="nav-link fw-semibold text-white px-3 py-2 rounded hover-effect" href="/ridePost">
+              <i class="bi bi-plus-circle me-1"></i> Post a Ride
+            </a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link fw-semibold text-white px-3 py-2 rounded hover-effect" href="/allRides">
+              <i class="bi bi-car-front me-1"></i> All Rides
+            </a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link fw-semibold text-white px-3 py-2 rounded hover-effect" href="/myRides">
+              <i class="bi bi-person-lines-fill me-1"></i> My Rides
+            </a>
+          </li>
+  
+          <!-- Auth Buttons -->
+          <% if (!currUser) { %>
+            <li class="nav-item">
+              <a class="btn btn-outline-light fw-semibold me-2 mt-2 mt-lg-0" href="/login">
+                <i class="bi bi-box-arrow-in-right me-1"></i> Login
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-light text-primary fw-semibold mt-2 mt-lg-0" href="/signup">
+                <i class="bi bi-person-plus-fill me-1"></i> Signup
+              </a>
+            </li>
+          <% } else { %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle d-flex align-items-center justify-content-center" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center shadow" style="width: 40px; height: 40px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);">
+                  <i class="bi bi-person-fill fs-5"></i>
+                </div>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 mt-2" aria-labelledby="userDropdown" style="min-width: 160px;">
+                <li>
+                  <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="/profile">
+                    <i class="bi bi-person-circle fs-5"></i> Profile
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 text-danger" href="/logout">
+                    <i class="bi bi-box-arrow-right fs-5"></i> Logout
+                  </a>
+                </li>
+              </ul>
+            </li>
+            
+          <% } %>
+  
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Custom Hover Effect -->
+  <style>
+    .hover-effect:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transition: background-color 0.3s ease-in-out;
+    }
+  </style>
+  

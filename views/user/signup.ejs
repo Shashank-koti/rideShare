@@ -1,0 +1,44 @@
+<% layout("/layouts/boilerplate") %>
+
+<body >
+
+    
+    <div class="container d-flex justify-content-center">
+        <div class="card shadow-lg p-4 rounded-4 mt-5 mb-5" style="width: 30rem; background: white;">
+            <h2 class="text-center text-primary mb-3">Signup on RideShare</h2>
+            <form action="/signup" method="POST" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="username" class="form-label text-primary">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Enter username" class="form-control" required />
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter a username.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label text-primary">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter email" class="form-control" required />
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label text-primary">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter password" class="form-control" required />
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter a password.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="mobile" class="form-label text-primary">
+                        <i class="bi bi-phone"></i> Mobile Number
+                    </label>
+                    <input type="tel" name="number" id="mobile" class="form-control" placeholder="Enter your mobile number" required pattern="[0-9]{10}" />
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter a valid 10-digit mobile number.</div>
+                </div>
+                
+                <button class="btn btn-primary w-100" type="submit">Signup</button>
+            </form>
+        </div>
+    </div>
+
+<script src="/js/script.js"></script>
+</body>

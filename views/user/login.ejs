@@ -1,0 +1,29 @@
+<% layout("/layouts/boilerplate") %>
+
+
+<body>
+    <div class="container d-flex justify-content-center">
+        <div class="card shadow-lg p-4 rounded-4 mt-5 mb-5" style="width: 30rem; background: white;">
+            <h2 class="text-center text-primary mb-3">Login on RideShare</h2>
+            <form action="/login" method="POST" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="username" class="form-label text-primary">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Enter username" class="form-control" required />
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter a username.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label text-primary">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter password" class="form-control" required />
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter a password.</div>
+                </div>
+                <button class="btn btn-primary w-100" type="submit">Login</button>
+            </form>
+            <p class="text-danger fw-bold text-center mt-3">
+                ! If you are not a user, <a href="/signup" class="text-decoration-underline">sign up first!</a>
+              </p>
+              
+        </div>
+    </div>
+</body>

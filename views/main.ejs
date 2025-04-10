@@ -1,0 +1,128 @@
+<% layout("/layouts/boilerplate") %>
+
+<body class="bg-light">
+    <!-- Ride Listings Header -->
+    <h1 class="text-center mt-4 text-primary fw-bold" style="font-family: 'Poppins', sans-serif; text-transform: uppercase; letter-spacing: 1px;">
+        Ride SHARE
+    </h1>
+
+    <!-- Ride Search Form -->
+    <form action="/rides" method="GET" class="needs-validation" novalidate>
+        <div class="container mt-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card shadow-lg rounded-4 border-0">
+                        <div class="card-body p-4">
+                            <h3 class="text-center mb-4 text-primary">Find Your Ride</h3>
+                            <div class="row row-cols-md-4 row-cols-1 g-3">
+                                
+                                <!-- Pickup Location -->
+                                <div class="col">
+                                    <label class="form-label fw-bold"><i class="fas fa-map-marker-alt me-1"></i> Pickup</label>
+                                    <input type="text" name="pickUp" class="form-control form-control-lg rounded-3" placeholder="Enter pickup location" required>
+                                </div>
+        
+                                <!-- Drop Location -->
+                                <div class="col">
+                                    <label class="form-label fw-bold"><i class="fas fa-map-pin me-1"></i> Drop</label>
+                                    <input type="text" name="drop" class="form-control form-control-lg rounded-3" placeholder="Enter drop location" required>
+                                </div>
+        
+                                <!-- Date -->
+                                <div class="col">
+                                    <label class="form-label fw-bold"><i class="fas fa-calendar-alt me-1"></i> Date</label>
+                                    <input type="date" name="date" class="form-control form-control-lg rounded-3" required>
+                                </div>
+        
+                                <!-- Search Button -->
+                                <div class="col d-grid">
+                                    <button type="submit" class="btn btn-primary btn-lg bg-gradient rounded-pill shadow-sm">
+                                        <i class="fas fa-search me-2"></i> Search
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Key Benefits Section -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      
+              <!-- Ride at Low Prices -->
+              <div class="col">
+                <div class="card h-100 shadow rounded-4 border-0">
+                  <div class="card-body p-4 d-flex flex-column">
+                    <div class="mb-3">
+                      <h5 class="fw-bold text-primary">
+                        <i class="fas fa-money-bill-wave me-2"></i>Affordable Rides
+                      </h5>
+                    </div>
+                    <p class="text-muted flex-grow-1">
+                      Wherever you’re headed, enjoy a variety of rides at wallet-friendly prices.
+                    </p>
+                  </div>
+                </div>
+              </div>
+      
+              <!-- Trust & Safety -->
+              <div class="col">
+                <div class="card h-100 shadow rounded-4 border-0">
+                  <div class="card-body p-4 d-flex flex-column">
+                    <div class="mb-3">
+                      <h5 class="fw-bold text-success">
+                        <i class="fas fa-shield-alt me-2"></i>Trusted & Safe
+                      </h5>
+                    </div>
+                    <p class="text-muted flex-grow-1">
+                      All users are verified and reviewed to provide a secure ride-sharing experience.
+                    </p>
+                  </div>
+                </div>
+              </div>
+      
+              <!-- Easy Booking -->
+              <div class="col">
+                <div class="card h-100 shadow rounded-4 border-0">
+                  <div class="card-body p-4 d-flex flex-column">
+                    <div class="mb-3">
+                      <h5 class="fw-bold text-warning">
+                        <i class="fas fa-mobile-alt me-2"></i>Seamless Booking
+                      </h5>
+                    </div>
+                    <p class="text-muted flex-grow-1">
+                      Quickly scroll, click, and confirm — booking a ride has never been easier.
+                    </p>
+                  </div>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    <!-- Call to Action Section -->
+    <div class="container d-flex align-items-center py-5">
+        <div class="row w-100 align-items-center">
+            <!-- Left Text Section -->
+            <div class="col-lg-6 text-center text-lg-start">
+                <h2 class="fw-bold text-primary">🚗 Driving in your vehicle soon?</h2>
+                <p class="text-muted fs-5">Let's make this your least expensive journey ever.</p>
+                <a href="/ridePost"><button class="btn btn-success rounded-pill px-4 py-2 mt-3 mb-3 shadow">Offer a ride</button></a>
+            </div>
+
+            <!-- Right Image Section -->
+            <div class="col-lg-6 d-flex justify-content-center">
+                <img src="https://images.unsplash.com/photo-1484373030460-8de45ac8796d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyJTIwcmlkZXxlbnwwfHwwfHx8MA%3D%3D" 
+                    alt="Car ride illustration" class="img-fluid rounded-3 shadow-lg">
+            </div>
+        </div>
+    </div>
+</body>

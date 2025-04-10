@@ -1,0 +1,62 @@
+.body{
+    font-family: "Plus Jakarta Sans", serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.info{
+    display: flex !important;
+    flex-wrap: wrap !important;
+}
+.info-search{
+    border-radius: 1rem 0 !important;
+}
+.navbar-brand img {
+    width: 45px;  /* Adjust size */
+    height: auto;
+    border-radius: 10px; /* Optional: rounded corners */
+}
+.ride-card:hover {
+    background-color: #f8f9fa;
+    transition: 0.3s ease;
+}
+.hover-effect:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transition: background-color 0.3s ease;
+  }
+
+.profile-card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.1);
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border: 4px solid #007bff;
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      color: #007bff;
+      font-weight: 600;
+    }
+
+    .info-label {
+      font-weight: 600;
+      color: #6c757d;
+    }
+
+    .btn-blue {
+      background-color: #007bff;
+      color: white;
+      border-radius: 50px;
+      padding: 8px 24px;
+    }
+
+    .btn-blue:hover {
+      background-color: #0056b3;
+    }

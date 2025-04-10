@@ -1,0 +1,81 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4 text-primary">Available Rides</h2>
+
+
+    <!-- Search and Filter -->
+    <div class="row mb-4">
+        <div class="col-lg-10 col-xl-8 mx-auto">
+          <form action="/rides" method="GET" class="row g-3 needs-validation" novalidate>
+            
+            <!-- Pickup Location -->
+            <div class="col-12 col-md-6 col-lg-3">
+              <input type="text" name="pickUp" class="form-control" placeholder="Enter Pickup Location" required>
+            </div>
+      
+            <!-- Drop Location -->
+            <div class="col-12 col-md-6 col-lg-3">
+              <input type="text" name="drop" class="form-control" placeholder="Enter Drop Location" required>
+            </div>
+      
+            <!-- Date -->
+            <div class="col-12 col-md-6 col-lg-3">
+              <input type="date" name="date" class="form-control" required>
+            </div>
+      
+            <!-- Submit Button -->
+            <div class="col-12 col-md-6 col-lg-3 d-grid">
+              <button class="btn btn-primary" type="submit">
+                <i class="bi bi-search me-2"></i>Search
+              </button>
+            </div>
+      
+          </form>
+        </div>
+      </div>
+      
+
+    <% if (rides.length > 0) { %>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <% rides.forEach(ride => { %>
+
+                <div class="col">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="bi bi-geo-alt-fill text-danger"></i> <%= ride.pickUp %> → <%= ride.drop %>
+                            </h5>
+                            <p class="card-text"><i class="bi bi-calendar-date text-primary"></i> Date: <%= ride.date.toLocaleDateString()%></p>
+                            <p class="card-text"><i class="bi bi-people text-success"></i> Seats Available: <strong><%= ride.seats %></strong></p>
+                            <p class="card-text"><i class="bi bi-currency-rupee text-warning"></i> Price: <strong>₹<%= ride.price %></strong></p>
+                            
+                            <!-- Buttons Container -->
+                            <div class="d-flex gap-2">
+                                <!-- Book Now Button -->
+                                <a href="/rides/<%= ride._id %>" class="btn btn-success w-50 fw-bold d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-check-circle me-2"></i> Book Now
+                                </a>
+
+                                <% if (String(ride.owner._id) === String(currentUser)){ %> 
+                                    <!-- Delete Button Form -->
+                                    <form action="/rideDelete/<%= ride._id %>?_method=DELETE" method="POST" class="w-50" onsubmit="return confirm('Are you sure you want to delete this ride?')">
+                                        <button class="btn btn-danger w-100 fw-bold d-flex align-items-center justify-content-center" type="submit">
+                                            <i class="bi bi-trash me-2"></i> Delete
+                                        </button>
+                                    </form>
+                                <% } %>
+                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+        
+    <% } else { %>
+        <div class="alert alert-warning text-center">
+            <i class="bi bi-exclamation-circle"></i> No rides found for the selected route.
+        </div>
+    <% } %>
+</div>

@@ -1,0 +1,26 @@
+ <% if (success.length > 0) { %>
+    <div id="flash-message" class="alert alert-success alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3 shadow-lg" role="alert">
+        <%= success %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>
+
+<% if (error.length > 0) { %>
+    <div id="flash-message" class="alert alert-danger alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3 shadow-lg" role="alert">
+        <%= error %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>
+
+<!-- Auto-hide Flash Messages After 3 Seconds -->
+<script>
+    setTimeout(() => {
+        let flashMessage = document.getElementById("flash-message");
+        if (flashMessage) {
+            flashMessage.classList.add("fade");
+            setTimeout(() => {
+                flashMessage.style.display = "none";
+            }, 500); // Additional delay to allow fade-out animation
+        }
+    }, 3000); // Hides message after 3 seconds
+</script>

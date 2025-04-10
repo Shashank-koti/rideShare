@@ -1,0 +1,95 @@
+const sampleRides = [
+    {
+        pickUp: "Dehradun",
+        drop: "Haridwar",
+        date: new Date("2025-04-20"),
+        price: 150,
+        seats: 3,
+        aadhaar: 537689214532,
+        vehicle: "Swift Dzire"
+    },
+    {
+        pickUp: "Delhi",
+        drop: "Chandigarh",
+        date: new Date("2025-04-21"),
+        price: 500,
+        seats: 2,
+        aadhaar: 537689214532,
+        vehicle: "Hyundai Creta"
+    },
+    {
+        pickUp: "Mumbai",
+        drop: "Pune",
+        date: new Date("2025-04-22"),
+        price: 300,
+        seats: 4,
+        aadhaar: 537689214532,
+        vehicle: "Toyota Innova"
+    },
+    {
+        pickUp: "Bangalore",
+        drop: "Mysore",
+        date: new Date("2025-04-23"),
+        price: 250,
+        seats: 3,
+        aadhaar: 537689214532,
+        vehicle: "Honda City"
+    },
+    {
+        pickUp: "Chennai",
+        drop: "Coimbatore",
+        date: new Date("2025-04-24"),
+        price: 600,
+        seats: 5,
+        aadhaar: 537689214532,
+        vehicle: "Tata Nexon"
+    },
+    {
+        pickUp: "Hyderabad",
+        drop: "Vijayawada",
+        date: new Date("2025-04-25"),
+        price: 400,
+        seats: 3,
+        aadhaar: 537689214532,
+        vehicle: "Maruti Brezza"
+    },
+    {
+        pickUp: "Jaipur",
+        drop: "Udaipur",
+        date: new Date("2025-04-26"),
+        price: 550,
+        seats: 2,
+        aadhaar: 537689214532,
+        vehicle: "Ford EcoSport"
+    },
+    {
+        pickUp: "Lucknow",
+        drop: "Varanasi",
+        date: new Date("2025-04-27"),
+        price: 450,
+        seats: 4,
+        aadhaar: 537689214532,
+        vehicle: "Mahindra XUV700"
+    },
+    {
+        pickUp: "Kolkata",
+        drop: "Durgapur",
+        date: new Date("2025-04-28"),
+        price: 350,
+        seats: 3,
+        aadhaar: 537689214532,
+        vehicle: "Hyundai Venue"
+    },
+    {
+        pickUp: "Ahmedabad",
+        drop: "Surat",
+        date: new Date("2025-04-29"),
+        price: 500,
+        seats: 5,
+        aadhaar: 537689214532,
+        vehicle: "Kia Seltos"
+    }
+  ];
+  
+  module.exports = sampleRides;
+  

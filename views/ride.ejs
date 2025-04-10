@@ -1,0 +1,53 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mt-4">
+    <h2 class="text-center text-primary mb-4"><i class="bi bi-car-front-fill"></i> Available Rides</h2>
+
+    <div class="row">
+        <% if (rides.length > 0) { %>
+            <% rides.forEach(ride => { %>
+                <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-lg h-100 rounded-4">
+                        <div class="card-body d-flex flex-column justify-content-between p-4">
+                            
+                            <!-- Pickup & Drop -->
+                            <h5 class="card-title fw-bold mb-3 text-dark">
+                                <i class="bi bi-geo-alt-fill text-danger me-2"></i>
+                                <%= ride.pickUp %> <span class="text-muted">→</span> <%= ride.drop %>
+                            </h5>
+                
+                            <!-- Ride Info -->
+                            <div class="mb-3">
+                                <p class="mb-2">
+                                    <i class="bi bi-calendar-date text-primary me-2"></i>
+                                    <strong>Date:</strong>
+                                    <%= new Date(ride.date).toString() %>
+                                </p>
+                                
+                                <p class="mb-2"><i class="bi bi-people text-success me-2"></i><strong>Seats:</strong> <%= ride.seats %></p>
+                                <p class="mb-2"><i class="bi bi-currency-rupee text-warning me-2"></i><strong>Price:</strong> ₹<%= ride.price %></p>
+                            </div>
+                
+                            <!-- Action Button -->
+                            <div class="mt-auto d-grid">
+                                <a href="/rides/<%= ride._id %>" class="btn btn-success fw-semibold py-2 d-flex align-items-center justify-content-center rounded-pill shadow-sm">
+                                    <i class="bi bi-check-circle me-2"></i> Book Now
+                                </a>
+                            </div>
+                
+                        </div>
+                    </div>
+                </div>
+                
+
+            <% }) %>
+        <% } else { %>
+            <div class="col-12">
+                <div class="alert alert-warning text-center">
+                    <i class="bi bi-exclamation-triangle"></i> No rides available at the moment.
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>
+

@@ -1,0 +1,63 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8 col-sm-10">
+        <div class="card shadow-lg rounded-4 p-4 border-0">
+          <h4 class="text-center mb-4 text-primary fw-bold">🚗 Ride Details</h4>
+          <form action="/ridePost" method="POST" novalidate class="needs-validation">
+  
+            <!-- Pickup -->
+            <div class="mb-3">
+              <label class="form-label fw-semibold"><i class="bi bi-geo-alt-fill me-2 text-danger"></i>Pickup Location</label>
+              <input type="text" name="ride[pickUp]" class="form-control" placeholder="Enter pickup location" required>
+            </div>
+  
+            <!-- Drop -->
+            <div class="mb-3">
+              <label class="form-label fw-semibold"><i class="bi bi-flag-fill me-2 text-info"></i>Drop Location</label>
+              <input type="text" name="ride[drop]" class="form-control" placeholder="Enter drop location" required>
+            </div>
+  
+            <!-- Date -->
+            <div class="mb-3">
+              <label class="form-label fw-semibold"><i class="bi bi-calendar-event-fill me-2 text-warning"></i>Date of Ride</label>
+              <input type="date" name="ride[date]" class="form-control" required>
+            </div>
+  
+            <!-- Price -->
+            <div class="mb-3">
+              <label class="form-label fw-semibold"><i class="bi bi-currency-rupee me-2 text-success"></i>Estimated Price</label>
+              <input type="text" name="ride[price]" class="form-control" placeholder="Enter estimated price" required>
+            </div>
+  
+            <!-- Seats -->
+            <div class="mb-3">
+              <label class="form-label fw-semibold"><i class="bi bi-people-fill me-2 text-secondary"></i>Available Seats</label>
+              <input type="number" name="ride[seats]" class="form-control" placeholder="Enter available seats" min="1" required>
+            </div>
+  
+            <!-- Vehicle -->
+            <div class="mb-3">
+              <label class="form-label fw-semibold"><i class="bi bi-car-front-fill me-2 text-primary"></i>Vehicle Name/Model</label>
+              <input type="text" name="ride[vehicle]" class="form-control" placeholder="Enter vehicle name/model" required>
+            </div>
+  
+            <!-- Aadhaar -->
+            <div class="mb-4">
+              <label class="form-label fw-semibold"><i class="bi bi-credit-card-fill me-2 text-success"></i>Aadhaar Number</label>
+              <input type="text" id="aadhaar" name="ride[aadhaar]" class="form-control"
+                placeholder="Enter your Aadhaar number" pattern="\d{12}" maxlength="12"
+                title="Aadhaar number must be exactly 12 digits" required>
+            </div>
+  
+            <!-- Submit Button -->
+            <button class="btn btn-primary w-100 fw-semibold">
+              <i class="bi bi-check-circle-fill me-2"></i>Submit Ride Details
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
